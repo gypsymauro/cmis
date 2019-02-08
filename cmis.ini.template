@@ -1,0 +1,7 @@
+[ALFRESCO]
+site=site
+hostname=alfresco
+port=8080
+username=admin
+password=
+
