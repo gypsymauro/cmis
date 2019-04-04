@@ -90,7 +90,10 @@ class Cmis:
         for entry in dom.getElementsByTagName("entry"):
             item = {}
             for title in entry.getElementsByTagName("title"):
-                title=title.firstChild.wholeText
+                if title.firstChild:
+                    title=title.firstChild.wholeText
+                else:
+                    title=''
 
             for path in entry.getElementsByTagName("cmisra:pathSegment"):
                 path=path.firstChild.wholeText
@@ -166,7 +169,10 @@ class Cmis:
                 content = content.getAttribute('src')
 
             for title in entry.getElementsByTagName("title"):
-                title=title.firstChild.wholeText
+                if title.firstChild:
+                    title=title.firstChild.wholeText
+                else:
+                    title=''
 
             for path in entry.getElementsByTagName("cmisra:pathSegment"):
                 path=path.firstChild.wholeText
